@@ -37,17 +37,17 @@ export default function Sidebar() {
             </Button>
           </div>
           <div className="flex-1">
-            <div className="flex items-center justify-center gap-10 ">
+            <div className="mt-auto p-8">
                  <Image
                     src="/LogoLesiam.png"
                     alt="Vercel Logo"
                      className=""
-                    width={180}
+                    width={200}
                      height={24}
                      priority
                  />
             </div>
-            <nav className="grid items-start px-2 text-sm font-medium lg:px-4 ">
+            <nav className="grid items-start px-2 text-lg font-medium lg:px-10 gap-2 ">
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
@@ -60,7 +60,7 @@ export default function Sidebar() {
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <ShoppingCart className="h-4 w-4" />
-                Orders
+                Quotation
                 
               </Link>
               <Link
@@ -68,14 +68,14 @@ export default function Sidebar() {
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <Users className="h-4 w-4" />
-                Customers
+                Delivery
               </Link>
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
               >
                 <LineChart className="h-4 w-4" />
-                Analytics
+                Invoice
               </Link>
             </nav>
           </div>
