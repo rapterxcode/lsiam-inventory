@@ -1,6 +1,5 @@
 import Dashboard from "@/components/dashboard";
-import InvoiceBuilder from "@/components/invoice-builder";
-import InvoicePage from "@/components/InvoicePage";
+import InvoiceBuilder from "@/components/InvoiceBuilder";
 import Nav from "@/components/Nav";
 import Sidebar from "@/components/Sidebar";
 
@@ -13,7 +12,6 @@ export default function Home() {
           <Nav/>
           {/* <Dashboard/> */}
           <InvoiceBuilder/>
-          {/* <InvoicePage/> */}
         </div>
     </div>        
         

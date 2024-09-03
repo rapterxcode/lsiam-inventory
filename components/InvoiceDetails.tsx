@@ -69,19 +69,19 @@ export function InvoiceDetails() {
         <h2 className="text-xl font-semibold">Invoice Details</h2>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label className="block text-sm font-medium text-gray-700">Invoice Number</label>
-            <Input type="text" placeholder="-" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2' />
+            
+            <Input type="text" placeholder="Invoice Number" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2' />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">PO. Number</label>
-            <Input type="text" placeholder="-" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2' />
+            
+            <Input type="text" placeholder="PO. Number" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2' />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Payment Terms</label>
-            <Input type="text" placeholder="-" value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} className='mb-2' />
+            
+            <Input type="text" placeholder="Payment Terms" value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} className='mb-2' />
           </div>
           <div>
-            <label className="block text-sm font-medium text-gray-700">Invoice Date</label>
+            
             <Popover>
               <PopoverTrigger asChild>
                 <Button
@@ -92,7 +92,7 @@ export function InvoiceDetails() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {invoiceDate ? format(invoiceDate, "PPP") : <span>Pick a date</span>}
+                  {invoiceDate ? format(invoiceDate, "PPP") : <span>Invoice Date</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0">
