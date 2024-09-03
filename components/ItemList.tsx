@@ -1,6 +1,7 @@
 import React, { ChangeEvent } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
+import { Textarea } from "@/components/ui/textarea"
 import {
   Table,
   TableBody,
@@ -26,10 +27,9 @@ const ItemList: React.FC<{
 }> = ({ items, handleItemChange, addItem, removeItem }) => (
   <div>
     <Table>
-      <TableCaption>@ LeSiam</TableCaption>
-      <TableHeader>
+      <TableHeader className='bg-slate-700'>
         <TableRow>
-          <TableHead className="w-[100px]">Item</TableHead>
+          <TableHead className="w-[500px]">Item</TableHead>
           <TableHead>Qty.</TableHead>
           <TableHead>Unit Price</TableHead>
           <TableHead>Total Price</TableHead>
@@ -40,13 +40,20 @@ const ItemList: React.FC<{
         {items.map((item, index) => (
           <TableRow key={index}>
             <TableCell className="font-medium">
-              <Input
+              {/* <Input
                 type="text"
                 name="item"
                 placeholder="Item"
                 value={item.item}
                 onChange={(e) => handleItemChange(index, e)}
                 className="mr-2 flex-1"
+              /> */}
+              <Textarea
+                  name="item"
+                  placeholder="Item"
+                  value={item.item}
+                  onChange={(e) => handleItemChange(index, e)}
+                  className="resize-none"
               />
             </TableCell>
             <TableCell>

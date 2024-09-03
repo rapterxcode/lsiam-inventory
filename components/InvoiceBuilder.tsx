@@ -48,14 +48,14 @@ const InvoiceBuilder: React.FC = () => {
       </div>
     </div>
     <div
-      className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm"
+      className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm "
       style={{
         maxWidth: '100%',
         maxHeight: '100%',
         overflow: 'hidden',
       }}
     >
-      <div className="invoice-builder p-6 rounded-lg shadow-md">
+      <div className="invoice-builder p-6 rounded-lg shadow-md bg-slate-300 ">
         <Header logo={logo} setLogo={setLogo} />
         <InvoiceDetails />
         <ItemList
