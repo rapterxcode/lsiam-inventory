@@ -77,7 +77,7 @@ const LogoUpload: React.FC<{ onLogoUpload: (logo: string) => void }> = ({ onLogo
           onDragLeave={handleDragLeave}
           onClick={handleClick}
         >
-          <p>Drag and drop a logo here, or click to select a file</p>
+          <h6>Drag and drop a logo here, or click to select a file</h6>
         </div>
       )}
     </div>
