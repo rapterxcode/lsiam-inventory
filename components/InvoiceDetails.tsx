@@ -26,7 +26,6 @@ const InvoiceDetails: React.FC<{
 }) => (
   <div>
     <section className="mb-8">
-      <h2 className="text-xl font-semibold">Invoice</h2>
       <div className="grid grid-cols-2 gap-4">
         <div>
           <h3 className="text-lg font-semibold">From</h3>
