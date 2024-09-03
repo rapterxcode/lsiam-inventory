@@ -14,14 +14,10 @@ interface Item {
 }
 
 const InvoiceBuilder: React.FC = () => {
-  const [client, setClient] = useState<string>('');
-  const [project, setProject] = useState<string>('');
+
   const [items, setItems] = useState<Item[]>([{ item: '', qty: 0, unitPrice: 0, totalPrice: 0 }]);
   const [logo, setLogo] = useState<string | null>(null);
-  const [invoiceNumber, setInvoiceNumber] = useState<string>('');
-  const [poNumber, setPoNumber] = useState<string>('');
-  const [paymentTerms, setPaymentTerms] = useState<string>('');
-  const printRef = useRef<HTMLDivElement>(null);
+
 
   const handleItemChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
     const newItems = [...items];
@@ -61,18 +57,7 @@ const InvoiceBuilder: React.FC = () => {
     >
       <div className="invoice-builder p-6 rounded-lg shadow-md">
         <Header logo={logo} setLogo={setLogo} />
-        <InvoiceDetails
-          client={client}
-          setClient={setClient}
-          invoiceNumber={invoiceNumber}
-          setInvoiceNumber={setInvoiceNumber}
-          poNumber={poNumber}
-          setPoNumber={setPoNumber}
-          paymentTerms={paymentTerms}
-          setPaymentTerms={setPaymentTerms}
-          project={project}
-          setProject={setProject}
-        />
+        <InvoiceDetails />
         <ItemList
           items={items}
           handleItemChange={handleItemChange}
