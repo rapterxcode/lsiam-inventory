@@ -26,13 +26,13 @@ const Header: React.FC<HeaderProps> = ({ logo, setLogo }) => {
           type="text" 
           value={companyText} 
           onChange={(e) => setCompanyText(e.target.value)} 
-          className="text-3xl font-bold text-right mb-2" 
+          className="text-2xl font-bold text-right mb-2 bg-transparent" 
         />
         <Input 
           type="text" 
           value={invoiceText} 
           onChange={(e) => setInvoiceText(e.target.value)} 
-          className="text-3xl font-bold text-right" 
+          className="text-5xl font-bold text-right bg-transparent" 
         />
       </div>
     </div>
