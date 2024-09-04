@@ -12,8 +12,8 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover"
-import { Input } from "./ui/input"
-import { Card, CardContent, CardHeader, CardTitle } from "./ui/card"
+import { Input } from "../ui/input"
+import { Card, CardContent, CardHeader, CardTitle } from "../ui/card"
 
 export function InvoiceDetails() {
   const [client, setClient] = React.useState<string>("")
@@ -33,13 +33,25 @@ export function InvoiceDetails() {
   const [toWebsite, setToWebsite] = React.useState<string>("")
 
   return (
-    <div>
-      <section className="mb-2 grid grid-cols-4 gap-12 justify-end">
-  <div className="col-start-4 text-lg font-semibold justify-end text-center">
+<div>
+      <section className="mb-2 grid grid-cols-2 gap-12 justify-end">
+        <div className="ml-2 col-start-1 text-lg font-bold justify-start text-left">
+          <p>Your Company Info</p>
+          <div className="text-sm">
+          <p>Your name</p>
+          <p>Address</p>
+          <p>Phone Number</p>
+          <p>Email Address : support@lsiam.ca</p>
+          <p>Website : https://lesiam.ca</p>
+          <p>Tax</p>
+          </div>
+
+        </div>
+        <div className="col-end-4 text-lg font-semibold justify-end text-center">
     <p>Invoice Information</p>
-    <Input type="text" placeholder="Invoice Number" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2 bg-transparent' />
-    <Input type="text" placeholder="PO. Number" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2 bg-transparent' />
-    <Input type="text" placeholder="Project" value={project} onChange={(e) => setProject(e.target.value)} className='mb-2 bg-transparent' />
+    <Input type="text" placeholder="Invoice No. INV-55555" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2 bg-transparent' />
+    <Input type="text" placeholder="PO. Number QT-44444" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2 bg-transparent' />
+    <Input type="text" placeholder="Project Name" value={project} onChange={(e) => setProject(e.target.value)} className='mb-2 bg-transparent' />
     <Input type="text" placeholder="Payment Terms" value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} className='mb-2 bg-transparent' />
     <Popover>
       <PopoverTrigger asChild>
@@ -63,8 +75,8 @@ export function InvoiceDetails() {
         />
       </PopoverContent>
     </Popover>
-  </div>
-</section>
+        </div>
+    </section>
 
       <section className="mb-2 grid grid-cols-2 gap-12">
       <div className="text-xl font-semibold justify-end text-left">
@@ -77,7 +89,7 @@ export function InvoiceDetails() {
           
         </div>
       <div className="text-xl font-semibold justify-end text-left">
-      <p>Bill From :</p>
+      <p>Ship To :</p>
               <Input type="text" placeholder="Company Name" value={fromCompanyName} onChange={(e) => setFromCompanyName(e.target.value)} className='mb-2' />
               <Input type="text" placeholder="Address" value={fromAddress} onChange={(e) => setFromAddress(e.target.value)} className='mb-2' />
               <Input type="text" placeholder="Phone Number" value={fromPhoneNumber} onChange={(e) => setFromPhoneNumber(e.target.value)} className='mb-2' />

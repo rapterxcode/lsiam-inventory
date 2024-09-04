@@ -1,5 +1,5 @@
 import Dashboard from "@/components/dashboard";
-import InvoiceBuilder from "@/components/InvoiceBuilder";
+import InvoiceBuilder from "@/components/Invoice/InvoiceBuilder";
 import Nav from "@/components/Nav";
 import Sidebar from "@/components/Sidebar";
 

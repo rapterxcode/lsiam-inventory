@@ -22,6 +22,8 @@ import {
   CardTitle,
 } from "@/components/ui/card"
 
+
+
 export default function Sidebar() {
   return (
     <div className="hidden border-r bg-muted/40 md:block">
@@ -49,15 +51,15 @@ export default function Sidebar() {
             </div>
             <nav className="grid items-start px-2 text-lg font-medium lg:px-10 gap-2 ">
               <Link
-                href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                href="/page"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:border hover:border-gray-300 hover:rounded-lg hover:bg-foreground hover:text-blue-500"
               >
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:border hover:border-gray-300 hover:rounded-lg hover:bg-foreground hover:text-blue-500"
               >
                 <ShoppingCart className="h-4 w-4" />
                 Quotation
@@ -65,21 +67,21 @@ export default function Sidebar() {
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:border hover:border-gray-300 hover:rounded-lg hover:bg-foreground hover:text-blue-500"
               >
                 <Users className="h-4 w-4" />
                 Delivery
               </Link>
               <Link
                 href="#"
-                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:border hover:border-gray-300 hover:rounded-lg hover:bg-foreground hover:text-blue-500"
               >
                 <LineChart className="h-4 w-4" />
                 Invoice
               </Link>
             </nav>
           </div>
-          <div className="mt-auto p-4">
+          <div className="mt-auto p-2 max-h-screen">
             <Card x-chunk="dashboard-02-chunk-0">
               <CardHeader className="p-2 pt-0 md:p-4">
                 <CardTitle>Upgrade Full version</CardTitle>
@@ -95,6 +97,7 @@ export default function Sidebar() {
               </CardContent>
             </Card>
           </div>
+          
         </div>
       </div>
   )

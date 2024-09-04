@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
-import LogoUpload from './LogoUpload';
+import LogoUpload from '../LogoUpload';
 
 interface HeaderProps {
   logo: string | null;
@@ -17,7 +17,7 @@ const Header: React.FC<HeaderProps> = ({ logo, setLogo }) => {
         <div className="flex-1">
           <div className="mt-auto p-8">
             <LogoUpload onLogoUpload={setLogo} />
-            {logo && <img src={logo} alt="Company Logo" className="h-16 ml-2" />}
+            {logo && <img src={logo} alt="Company Logo" className="w-[200px] h-[auto] ml-5" />}
           </div>
         </div>
       </div>

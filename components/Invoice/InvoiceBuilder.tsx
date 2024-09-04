@@ -1,9 +1,9 @@
 "use client";
 
 import React, { useState, ChangeEvent, useRef } from 'react';
-import Header from '@/components/Header';
-import InvoiceDetails from '@/components/InvoiceDetails';
-import ItemList from '@/components/ItemList';
+import Header from '@/components/Invoice/Header';
+import InvoiceDetails from '@/components/Invoice/InvoiceDetails';
+import ItemList from '@/components/Invoice/ItemList';
 import { Button } from '@/components/ui/button';
 
 interface Item {
@@ -55,7 +55,7 @@ const InvoiceBuilder: React.FC = () => {
         overflow: 'hidden',
       }}
     >
-      <div className="invoice-builder p-6 rounded-lg shadow-md bg-slate-300 ">
+      <div className="invoice-builder p-6 rounded-lg shadow-md bg-slate-300 max-h-screen overflow-y-auto">
         <Header logo={logo} setLogo={setLogo} />
         <InvoiceDetails />
         <ItemList
