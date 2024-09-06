@@ -16,6 +16,9 @@ import {
 export default function NavItem() {
   return (
     <nav className="grid items-start px-2 text-lg font-medium lg:px-4">
+              <div>
+                <h2>Overview</h2>
+              </div>
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
@@ -23,6 +26,9 @@ export default function NavItem() {
                 <Home className="h-4 w-4" />
                 Dashboard
               </Link>
+              <div>
+                <h2>Sale</h2>
+              </div>
               <Link
                 href="#"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
@@ -46,6 +52,16 @@ export default function NavItem() {
               >
                 <Users className="h-4 w-4" />
                 Invoice
+              </Link>
+              <div>
+                <h2>Inventory</h2>
+              </div>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                List
               </Link>
             </nav>
   )
