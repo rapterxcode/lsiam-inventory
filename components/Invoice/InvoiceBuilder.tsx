@@ -5,6 +5,7 @@ import Header from '@/components/Invoice/Header';
 import InvoiceDetails from '@/components/Invoice/InvoiceDetails';
 import ItemList from '@/components/Invoice/ItemList';
 import { Button } from '@/components/ui/button';
+import { Footer } from '@/components/Invoice/Footer';
 
 // interface Item {
 //   item: string;
@@ -58,12 +59,8 @@ const InvoiceBuilder: React.FC = () => {
       <div className="invoice-builder p-6 rounded-lg shadow-md bg-slate-300 max-h-screen overflow-y-auto">
         <Header logo={logo} setLogo={setLogo} />
         <InvoiceDetails />
-        <ItemList
-          // items={items}
-          // handleItemChange={handleItemChange}
-          // addItem={addItem}
-          // removeItem={removeItem}
-        />
+        <ItemList />
+        <Footer/>
       </div>
     </div>
   </main>
