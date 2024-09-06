@@ -1,4 +1,6 @@
-import { Dashboard } from "@/app/page/Dashboard";
+import Dashboard from "./page/Dashboard/page";
+
+
 
 export default function Home() {
   return (

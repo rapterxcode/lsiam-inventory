@@ -20,7 +20,7 @@ export default function NavItem() {
                 <h2>Overview</h2>
               </div>
               <Link
-                href="#"
+                href="/page/Dashboard"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
               >
                 <Home className="h-4 w-4" />
@@ -47,11 +47,39 @@ export default function NavItem() {
                 Delivery
               </Link>
               <Link
-                href="#"
+                href="/page/Invoice"
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
               >
                 <Users className="h-4 w-4" />
                 Invoice
+              </Link>
+              {/* <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Customer
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Receipt
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Packages
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Payment Received
               </Link>
               <div>
                 <h2>Inventory</h2>
@@ -61,8 +89,101 @@ export default function NavItem() {
                 className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
               >
                 <Package className="h-4 w-4" />
-                List
+                Items 
               </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Composite Items
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Item Groups 
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Price Lists
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Inventory Adjustments
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Transfer Orders
+              </Link>
+              <div>
+                <h2>Perchases</h2>
+              </div>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Vendors
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Purchase Orders
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Package className="h-4 w-4" />
+                Purchase Receives
+              </Link>
+              <div>
+                <h2>Reports  Center</h2>
+              </div>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Reports
+              </Link>
+              <div>
+                <h2>Admin Management</h2>
+              </div>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Manage Users
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Manage Privilege
+              </Link>
+              <Link
+                href="#"
+                className="flex items-center gap-3 rounded-lg px-3 py-2 text-muted-foreground transition-all hover:text-primary hover:bg-muted"
+              >
+                <Users className="h-4 w-4" />
+                Invite User
+              </Link> */}
             </nav>
   )
 }

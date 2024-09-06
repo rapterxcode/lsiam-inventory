@@ -6,33 +6,33 @@ import InvoiceDetails from '@/components/Invoice/InvoiceDetails';
 import ItemList from '@/components/Invoice/ItemList';
 import { Button } from '@/components/ui/button';
 
-interface Item {
-  item: string;
-  qty: number;
-  unitPrice: number;
-  totalPrice: number;
-}
+// interface Item {
+//   item: string;
+//   qty: number;
+//   unitPrice: number;
+//   totalPrice: number;
+// }
 
 const InvoiceBuilder: React.FC = () => {
 
-  const [items, setItems] = useState<Item[]>([{ item: '', qty: 0, unitPrice: 0, totalPrice: 0 }]);
+  // const [items, setItems] = useState<Item[]>([{ item: '', qty: 0, unitPrice: 0, totalPrice: 0 }]);
   const [logo, setLogo] = useState<string | null>(null);
 
 
-  const handleItemChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
-    const newItems = [...items];
-    newItems[index][event.target.name as keyof Item] = event.target.value;
-    setItems(newItems);
-  };
+  // const handleItemChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
+  //   const newItems = [...items];
+  //   newItems[index][event.target.name as keyof Item] = event.target.value;
+  //   setItems(newItems);
+  // };
 
-  const addItem = () => {
-    setItems([...items, { item: '', qty: 0, unitPrice: 0, totalPrice: 0 }]);
-  };
+  // const addItem = () => {
+  //   setItems([...items, { item: '', qty: 0, unitPrice: 0, totalPrice: 0 }]);
+  // };
 
-  const removeItem = (index: number) => {
-    const newItems = items.filter((_, i) => i !== index);
-    setItems(newItems);
-  };
+  // const removeItem = (index: number) => {
+  //   const newItems = items.filter((_, i) => i !== index);
+  //   setItems(newItems);
+  // };
 
   return (
     <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6" style={{ height: 'auto', width: 'auto' }}>
@@ -59,10 +59,10 @@ const InvoiceBuilder: React.FC = () => {
         <Header logo={logo} setLogo={setLogo} />
         <InvoiceDetails />
         <ItemList
-          items={items}
-          handleItemChange={handleItemChange}
-          addItem={addItem}
-          removeItem={removeItem}
+          // items={items}
+          // handleItemChange={handleItemChange}
+          // addItem={addItem}
+          // removeItem={removeItem}
         />
       </div>
     </div>

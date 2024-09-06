@@ -31,28 +31,29 @@ export function InvoiceDetails() {
   const [toPhoneNumber, setToPhoneNumber] = React.useState<string>("")
   const [toTaxID, setToTaxID] = React.useState<string>("")
   const [toWebsite, setToWebsite] = React.useState<string>("")
+  const [shipCompanyName, setShipCompanyName] = React.useState<string>("")
+  const [shipAddress, setShipAddress] = React.useState<string>("")
+  const [shipPhoneNumber, setShipPhoneNumber] = React.useState<string>("")
+  const [shipTaxID, setShipTaxID] = React.useState<string>("")
+  const [shipWebsite, setShipWebsite] = React.useState<string>("")
 
   return (
 <div>
       <section className="mb-2 grid grid-cols-2 gap-12 justify-end">
         <div className="ml-2 col-start-1 text-lg font-bold justify-start text-left">
-          <p>Your Company Info</p>
-          <div className="text-sm">
-          <p>Your name</p>
-          <p>Address</p>
-          <p>Phone Number</p>
-          <p>Email Address : support@lsiam.ca</p>
-          <p>Website : https://lesiam.ca</p>
-          <p>Tax</p>
-          </div>
-
+        <h1>From :</h1>
+          <Input type="text" placeholder="Company Name" value={fromCompanyName} onChange={(e) => setFromCompanyName(e.target.value)} className='mb-2 bg-transparent' />
+          <Input type="text" placeholder="Address" value={fromAddress} onChange={(e) => setFromAddress(e.target.value)} className='mb-2 bg-transparent' />
+          <Input type="text" placeholder="Phone Number" value={fromPhoneNumber} onChange={(e) => setFromPhoneNumber(e.target.value)} className='mb-2 bg-transparent' />
+          <Input type="text" placeholder="Tax ID" value={fromTaxID} onChange={(e) => setFromTaxID(e.target.value)} className='mb-2 bg-transparent' />
+          <Input type="text" placeholder="Website" value={fromWebsite} onChange={(e) => setFromWebsite(e.target.value)} className='mb-2 bg-transparent' />
         </div>
         <div className="col-end-4 text-lg font-semibold justify-end text-center">
-    <p>Invoice Information</p>
-    <Input type="text" placeholder="Invoice No. INV-55555" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2 bg-transparent' />
-    <Input type="text" placeholder="PO. Number QT-44444" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2 bg-transparent' />
-    <Input type="text" placeholder="Project Name" value={project} onChange={(e) => setProject(e.target.value)} className='mb-2 bg-transparent' />
-    <Input type="text" placeholder="Payment Terms" value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} className='mb-2 bg-transparent' />
+        <p>Invoice Information</p>
+        <Input type="text" placeholder="Invoice No. INV-55555" value={invoiceNumber} onChange={(e) => setInvoiceNumber(e.target.value)} className='mb-2 bg-transparent' />
+        <Input type="text" placeholder="PO. Number QT-44444" value={poNumber} onChange={(e) => setPoNumber(e.target.value)} className='mb-2 bg-transparent' />
+        <Input type="text" placeholder="Project Name" value={project} onChange={(e) => setProject(e.target.value)} className='mb-2 bg-transparent' />
+        <Input type="text" placeholder="Payment Terms" value={paymentTerms} onChange={(e) => setPaymentTerms(e.target.value)} className='mb-2 bg-transparent' />
     <Popover>
       <PopoverTrigger asChild>
         <Button
@@ -77,36 +78,25 @@ export function InvoiceDetails() {
     </Popover>
         </div>
     </section>
-
-      <section className="mb-2 grid grid-cols-2 gap-12">
+    <section className="mb-2 grid grid-cols-2 gap-12">
       <div className="text-xl font-semibold justify-end text-left">
       <p>Bill To :</p>
-            <Input type="text" placeholder="Company Name" value={client} onChange={(e) => setClient(e.target.value)} className='mb-2' />
-            <Input type="text" placeholder="Address" value={toAddress} onChange={(e) => setToAddress(e.target.value)} className='mb-2' />
-            <Input type="text" placeholder="Phone Number" value={toPhoneNumber} onChange={(e) => setToPhoneNumber(e.target.value)} className='mb-2' />
-            <Input type="text" placeholder="Tax ID" value={toTaxID} onChange={(e) => setToTaxID(e.target.value)} className='mb-2' />
-            <Input type="text" placeholder="Website" value={toWebsite} onChange={(e) => setToWebsite(e.target.value)} className='mb-2' />
+            <Input type="text" placeholder="Company Name" value={client} onChange={(e) => setClient(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Address" value={toAddress} onChange={(e) => setToAddress(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Phone Number" value={toPhoneNumber} onChange={(e) => setToPhoneNumber(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Tax ID" value={toTaxID} onChange={(e) => setToTaxID(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Website" value={toWebsite} onChange={(e) => setToWebsite(e.target.value)} className='mb-2 bg-transparent' />
           
         </div>
       <div className="text-xl font-semibold justify-end text-left">
       <p>Ship To :</p>
-              <Input type="text" placeholder="Company Name" value={fromCompanyName} onChange={(e) => setFromCompanyName(e.target.value)} className='mb-2' />
-              <Input type="text" placeholder="Address" value={fromAddress} onChange={(e) => setFromAddress(e.target.value)} className='mb-2' />
-              <Input type="text" placeholder="Phone Number" value={fromPhoneNumber} onChange={(e) => setFromPhoneNumber(e.target.value)} className='mb-2' />
-              <Input type="text" placeholder="Tax ID" value={fromTaxID} onChange={(e) => setFromTaxID(e.target.value)} className='mb-2' />
-              <Input type="text" placeholder="Website" value={fromWebsite} onChange={(e) => setFromWebsite(e.target.value)} className='mb-2' />
-         
+            <Input type="text" placeholder="Company Name" value={shipCompanyName} onChange={(e) => setShipCompanyName(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Address" value={shipAddress} onChange={(e) => setShipAddress(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Phone Number" value={shipPhoneNumber} onChange={(e) => setShipPhoneNumber(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Tax ID" value={shipTaxID} onChange={(e) => setShipTaxID(e.target.value)} className='mb-2 bg-transparent' />
+            <Input type="text" placeholder="Website" value={shipWebsite} onChange={(e) => setShipWebsite(e.target.value)} className='mb-2 bg-transparent' />
         </div>
-        
-       
-      </section>
-    
-          
-        
-        
-   
-
-      
+    </section> 
     </div>
   )
 }
