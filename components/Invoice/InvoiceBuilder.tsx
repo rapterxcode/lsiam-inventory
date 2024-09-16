@@ -60,7 +60,7 @@ const InvoiceBuilder: React.FC = () => {
           <Header logo={logo} setLogo={setLogo} isPrinting={isPrinting} />
           <InvoiceDetails isPrinting={isPrinting}  />
           <ItemList  isPrinting={isPrinting} />
-          <Footer  />
+          <Footer isPrinting={isPrinting} />
         </div>
       </div>
     </main>

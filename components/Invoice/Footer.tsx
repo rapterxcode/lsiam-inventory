@@ -1,55 +1,87 @@
-
-import React from "react"
-import { Textarea } from "../ui/textarea"
+import React from "react";
+import { Textarea } from "../ui/textarea";
 import {
   Select,
   SelectContent,
   SelectGroup,
   SelectItem,
-  SelectLabel,
   SelectTrigger,
   SelectValue,
-} from "@/components/ui/select"
-import { Input } from "../ui/input"
+} from "@/components/ui/select";
+import { Input } from "../ui/input";
 
-export function Footer() {
-  const [note, setNote] = React.useState<string>("")
-  const [conterms, setConTerms] = React.useState<string>("")
-  const [emailPaypal, setEmailPaypal] = React.useState<string>("")
-  return (
-        <section className="mb-2 grid grid-cols-2 gap-12">
-        <div className="col-end-2 text-lg font-semibold">
-            <h2>Payment Medtod</h2>
-        <Select>
-            <SelectTrigger className="">
-                <SelectValue placeholder="Select a Payment Medtod" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-              {/* <SelectLabel>Medtod</SelectLabel> */}
-              <SelectItem value="paypal">Paypal</SelectItem>
-              <SelectItem disabled value="debitcard">Debit Card</SelectItem>
-              <SelectItem disabled value="creditcard">Credit Card</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-        </Select>
-        <Input type="text" placeholder="Email xxxx@xxxx.com" value={emailPaypal} onChange={(e) => setEmailPaypal(e.target.value)} className='mb-2 bg-transparent' />
-            
-        </div>
-        <div className="col-end-2 text-lg font-semibold">
-            <h2>Notes</h2>
-            <Textarea placeholder="Notes" value={note} onChange={(e) => setNote(e.target.value)} className='mb-2 bg-transparent' />
-            <h2>Condition and Terms</h2>
-            <Textarea placeholder="Condition and Terms" value={conterms} onChange={(e) => setConTerms(e.target.value)} className='mb-2 bg-transparent' />
-        </div>
-        {/* <div className="col-end-4 text-lg font-semibold">
-            <h2>Notes</h2>
-            <Textarea placeholder="Notes" value={note} onChange={(e) => setNote(e.target.value)} className='mb-2 bg-transparent' />
-            <h2>Condition and Terms</h2>
-            <Textarea placeholder="Condition and Terms" value={conterms} onChange={(e) => setConTerms(e.target.value)} className='mb-2 bg-transparent' />
-        </div> */}
-    </section>
-  )
+interface FooterProps {
+  isPrinting: boolean;
 }
 
-export default Footer
+export const Footer: React.FC<FooterProps> = ({ isPrinting }) => {
+  const [note, setNote] = React.useState<string>(
+    "Note: Thank you for your business! Please make the payment by the due date to avoid any late fees. If you have any questions, feel free to contact us at [Your Contact Information]."
+  );
+  const [conterms, setConTerms] = React.useState<string>(
+    "1. Payment Terms - Payment Due Date: Payment is due within [X] days from the invoice date. - Late Payment: A late fee of [Y]% per month will be applied to overdue invoices. - Early Payment Discount: A [Z]% discount is available if payment is made within [A] days of the invoice date."
+  );
+  const [emailPaypal, setEmailPaypal] = React.useState<string>("support@lsiam.com");
+  const [paymentMethod, setPaymentMethod] = React.useState<string>("");
+
+  return (
+    <section className="mb-2 gap-12">
+      <div className="col-end-2 text-lg font-semibold">
+        <h2>Payment Method</h2>
+        {isPrinting ? (
+          <>
+            <div>{paymentMethod}</div>
+            <div>{emailPaypal}</div>
+            
+          </>
+        ) : (
+          <>
+            <Select onValueChange={(value) => setPaymentMethod(value)}>
+              <SelectTrigger className="">
+                <SelectValue placeholder="Select a Payment Method" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectItem value="Paypal">Paypal</SelectItem>
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+            <Input
+              type="text"
+              placeholder="Email xxxx@xxxx.com"
+              value={emailPaypal}
+              onChange={(e) => setEmailPaypal(e.target.value)}
+              className="mb-2 bg-transparent"
+            />
+          </>
+        )}
+      </div>
+      <div className="col-end-2 text-lg font-semibold">
+        <h2>Notes</h2>
+        {isPrinting ? (
+          <div>{note}</div>
+        ) : (
+          <Textarea
+            placeholder="Notes"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+            className="mb-2 bg-transparent"
+          />
+        )}
+        <h2>Condition and Terms</h2>
+        {isPrinting ? (
+          <div>{conterms}</div>
+        ) : (
+          <Textarea
+            placeholder="Condition and Terms"
+            value={conterms}
+            onChange={(e) => setConTerms(e.target.value)}
+            className="mb-2 bg-transparent"
+          />
+        )}
+      </div>
+    </section>
+  );
+};
+
+export default Footer;
