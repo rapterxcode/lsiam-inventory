@@ -11,17 +11,20 @@ import LogoUpload from '@/components/LogoUpload'; // Import the LogoUpload compo
 
 const InvoiceBuilder: React.FC = () => {
   const [logo, setLogo] = useState<string | null>(null);
+  const [isPrinting, setIsPrinting] = useState(false);
   const componentRef = useRef<HTMLDivElement>(null);
 
   const handlePrint = useReactToPrint({
     content: () => componentRef.current,
     onBeforeGetContent: () => {
       return new Promise((resolve) => {
+        setIsPrinting(true);
         setTimeout(() => {
           resolve();
         }, 500); // Delay to ensure all elements are rendered
       });
     },
+    onAfterPrint: () => setIsPrinting(false),
   });
 
   useEffect(() => {
@@ -54,10 +57,10 @@ const InvoiceBuilder: React.FC = () => {
         }}
       >
         <div ref={componentRef} className="invoice-builder p-6 rounded-lg shadow-md bg-white">
-          <Header logo={logo} setLogo={setLogo} />
-          <InvoiceDetails />
-          <ItemList />
-          <Footer />
+          <Header logo={logo} setLogo={setLogo} isPrinting={isPrinting} />
+          <InvoiceDetails isPrinting={isPrinting}  />
+          <ItemList  isPrinting={isPrinting} />
+          <Footer  />
         </div>
       </div>
     </main>

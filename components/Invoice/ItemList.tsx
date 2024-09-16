@@ -18,7 +18,7 @@ interface Item {
   totalPrice: number;
 }
 
-const ItemList: React.FC = () => {
+const ItemList: React.FC<{ isPrinting: boolean }> = ({ isPrinting }) => {
   const [items, setItems] = useState<Item[]>([]);
   const [subTotal, setSubTotal] = useState<number>(0);
   const [total, setTotal] = useState<number>(0);
@@ -79,67 +79,86 @@ const ItemList: React.FC = () => {
   return (
     <div>
       <Table>
-        <TableHeader className='bg-slate-700'>
+        <TableHeader className='bg-slate-300'>
           <TableRow>
-            <TableHead className="w-[500px]">Item</TableHead>
+            <TableHead className="w-[500px]">Product</TableHead>
             <TableHead>Qty.</TableHead>
             <TableHead>Unit Price</TableHead>
             <TableHead>Total Price</TableHead>
-            <TableHead></TableHead>
+            {!isPrinting && <TableHead></TableHead>}
           </TableRow>
         </TableHeader>
         <TableBody>
           {items.map((item, index) => (
             <TableRow key={index}>
               <TableCell className="font-medium">
-                <Textarea
-                  name="item"
-                  placeholder="Item"
-                  value={item.item}
-                  onChange={(e) => handleItemChange(index, e)}
-                  // className="resize-none"
-                />
+                {isPrinting ? (
+                  item.item
+                ) : (
+                  <Textarea
+                    name="item"
+                    placeholder="Item"
+                    value={item.item}
+                    onChange={(e) => handleItemChange(index, e)}
+                  />
+                )}
               </TableCell>
               <TableCell>
-                <Input
-                  type="number"
-                  name="qty"
-                  placeholder="Qty."
-                  value={item.qty}
-                  onChange={(e) => handleItemChange(index, e)}
-                  className="mr-2 w-24"
-                />
+                {isPrinting ? (
+                  item.qty
+                ) : (
+                  <Input
+                    type="number"
+                    name="qty"
+                    placeholder="Qty."
+                    value={item.qty}
+                    onChange={(e) => handleItemChange(index, e)}
+                    className="mr-2 w-24"
+                  />
+                )}
               </TableCell>
               <TableCell>
-                <Input
-                  type="number"
-                  name="unitPrice"
-                  placeholder="Unit Price"
-                  value={item.unitPrice}
-                  onChange={(e) => handleItemChange(index, e)}
-                  className="mr-2 w-24"
-                />
+                {isPrinting ? (
+                  item.unitPrice
+                ) : (
+                  <Input
+                    type="number"
+                    name="unitPrice"
+                    placeholder="Unit Price"
+                    value={item.unitPrice}
+                    onChange={(e) => handleItemChange(index, e)}
+                    className="mr-2 w-24"
+                  />
+                )}
               </TableCell>
               <TableCell>
-                <Input
-                  type="number"
-                  name="totalPrice"
-                  placeholder="Total Price"
-                  value={item.totalPrice}
-                  onChange={(e) => handleItemChange(index, e)}
-                  className="mr-2 w-24"
-                />
+                {isPrinting ? (
+                  item.totalPrice
+                ) : (
+                  <Input
+                    type="number"
+                    name="totalPrice"
+                    placeholder="Total Price"
+                    value={item.totalPrice}
+                    onChange={(e) => handleItemChange(index, e)}
+                    className="mr-2 w-24"
+                  />
+                )}
               </TableCell>
-              <TableCell>
-                <Button variant="ghost" onClick={() => removeItem(index)}>
-                  Remove
-                </Button>
-              </TableCell>
+              {!isPrinting && (
+                <TableCell>
+                  <Button variant="ghost" onClick={() => removeItem(index)}>
+                    Remove
+                  </Button>
+                </TableCell>
+              )}
             </TableRow>
           ))}
         </TableBody>
       </Table>
-      <Button onClick={addItem}>Add Item</Button>
+      {!isPrinting && (
+        <Button onClick={addItem}>Add Item</Button>
+      )}
       <section className="mb-2 grid grid-cols-2 gap-20 text-right justify-end">
         <div className="col-span-1 col-start-2">
           <div className="grid grid-cols-2 gap-1 ">
