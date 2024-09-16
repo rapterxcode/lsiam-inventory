@@ -16,7 +16,7 @@ const Header: React.FC<HeaderProps> = ({ logo, setLogo }) => {
       <div className="flex items-center">
         <div className="flex-1">
           <div className="mt-auto p-10 justify-items-start">
-            <LogoUpload onLogoUpload={setLogo} />
+            {/* <LogoUpload onLogoUpload={setLogo} /> */}
             {logo && <img src={logo} alt="Company Logo" className="w-[200px] h-[auto]" />}
           </div>
         </div>

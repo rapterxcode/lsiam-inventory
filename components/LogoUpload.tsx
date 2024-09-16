@@ -4,7 +4,6 @@ import React, { useState, ChangeEvent, DragEvent } from 'react';
 import { TrashIcon } from '@radix-ui/react-icons';
 import { Button } from './ui/button';
 
-
 const LogoUpload: React.FC<{ onLogoUpload: (logo: string) => void }> = ({ onLogoUpload }) => {
   const [logo, setLogo] = useState<string | null>(null);
   const [dragging, setDragging] = useState(false);
@@ -66,7 +65,7 @@ const LogoUpload: React.FC<{ onLogoUpload: (logo: string) => void }> = ({ onLogo
       {logo ? (
         <div className="flex items-center">
           <Button onClick={handleRemoveLogo} className="ml-2">
-            <TrashIcon />
+            <TrashIcon /> Delete Logo
           </Button>
         </div>
       ) : (
