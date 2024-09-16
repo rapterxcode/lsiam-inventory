@@ -25,10 +25,13 @@ const ItemList: React.FC = () => {
   const [balanceDue, setBalanceDue] = useState<number>(0);
   const [totalInWords, setTotalInWords] = useState<string>("");
 
-  const handleItemChange = (index: number, event: ChangeEvent<HTMLInputElement>) => {
+  const handleItemChange = (index: number, event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = event.target;
     const updatedItems = [...items];
-    updatedItems[index] = { ...updatedItems[index], [name]: parseFloat(value) };
+    updatedItems[index] = { 
+      ...updatedItems[index], 
+      [name]: name === 'qty' || name === 'unitPrice' ? parseFloat(value) : value 
+    };
     updatedItems[index].totalPrice = updatedItems[index].qty * updatedItems[index].unitPrice;
     setItems(updatedItems);
   };
@@ -94,7 +97,7 @@ const ItemList: React.FC = () => {
                   placeholder="Item"
                   value={item.item}
                   onChange={(e) => handleItemChange(index, e)}
-                  className="resize-none"
+                  // className="resize-none"
                 />
               </TableCell>
               <TableCell>
