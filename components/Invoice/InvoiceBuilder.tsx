@@ -56,7 +56,7 @@ const InvoiceBuilder: React.FC = () => {
           overflow: 'hidden',
         }}
       >
-        <div ref={componentRef} className="invoice-builder p-6 rounded-lg shadow-md bg-white">
+        <div ref={componentRef} className="invoice-builder p-6 rounded-lg shadow-md">
           <Header logo={logo} setLogo={setLogo} isPrinting={isPrinting} />
           <InvoiceDetails isPrinting={isPrinting}  />
           <ItemList  isPrinting={isPrinting} />

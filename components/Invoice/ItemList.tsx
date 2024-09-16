@@ -79,7 +79,7 @@ const ItemList: React.FC<{ isPrinting: boolean }> = ({ isPrinting }) => {
   return (
     <div>
       <Table>
-        <TableHeader className='bg-slate-300'>
+        <TableHeader className='bg-current'>
           <TableRow>
             <TableHead className="w-[500px]">Product</TableHead>
             <TableHead>Qty.</TableHead>
