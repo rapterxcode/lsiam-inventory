@@ -49,14 +49,14 @@ const InvoiceBuilder: React.FC = () => {
         </div>
       </div>
       <div 
-        className="flex flex-1 items-center justify-center rounded-lg border border-dashed shadow-sm"
+        className="flex flex-1 items-center justify-center rounded-lg border border-dashed"
         style={{
           maxWidth: '100%',
           maxHeight: '100%',
           overflow: 'hidden',
         }}
       >
-        <div ref={componentRef} className="invoice-builder p-6 rounded-lg shadow-md">
+        <div ref={componentRef} className="invoice-builder p-6 rounded-lg">
           <Header logo={logo} setLogo={setLogo} isPrinting={isPrinting} />
           <InvoiceDetails isPrinting={isPrinting}  />
           <ItemList  isPrinting={isPrinting} />
