@@ -90,7 +90,7 @@
 
 @page {
   size: A4;
-  margin: 1.5cm 1.5cm 1.5cm 1.5cm; /* top, right, bottom, left */
+  margin: 2cm 2cm 2cm 2cm; /* top, right, bottom, left */
 }
 
 @media print {
@@ -101,3 +101,4 @@
     padding: 0;
   }
 }
+
