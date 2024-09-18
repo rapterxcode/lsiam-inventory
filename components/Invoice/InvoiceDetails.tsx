@@ -44,12 +44,12 @@ export const InvoiceDetails: React.FC<InvoiceDetailsProps> = ({ isPrinting }) =>
   return (
 <div>
       <section className="mb-2 grid grid-cols-2  justify-end">
-        <div className=" text-lg font-bold  text-left ">
+        <div className=" text-lg font-semibold  text-left w-[400px] ">
         <h1>From :</h1>
         {isPrinting ? (
               <>
               
-                <div className="text-lg  text-left">
+                <div className="text-sm  text-left">
                 <div>{fromCompanyName}</div>
                 <div>{fromAddress}</div>
                 <div>{fromPhoneNumber}</div>
@@ -72,7 +72,7 @@ export const InvoiceDetails: React.FC<InvoiceDetailsProps> = ({ isPrinting }) =>
         <h1>Invoice Information</h1>
         {isPrinting ? (
               <>
-              <div className="text-lg text-right ">
+              <div className="text-sm text-right ">
                 <div>{invoiceNumber}</div>
                 <div>{poNumber}</div>
                 <div>{project}</div>
@@ -113,15 +113,17 @@ export const InvoiceDetails: React.FC<InvoiceDetailsProps> = ({ isPrinting }) =>
         </div>
     </section>
     <section className="mb-2 grid grid-cols-2 gap-12">
-      <div className="text-xl font-semibold justify-end text-left">
+      <div className="text-lg font-semibold justify-end text-left">
       <p>Bill To :</p>
       {isPrinting ? (
               <>
+              <div className="text-sm">
                 <div>{client}</div>
                 <div>{toAddress}</div>
                 <div>{toPhoneNumber}</div>
                 <div>{toTaxID}</div>
                 <div>{toWebsite}</div>
+                </div>
               </>
             ) : (
               <>
@@ -133,15 +135,17 @@ export const InvoiceDetails: React.FC<InvoiceDetailsProps> = ({ isPrinting }) =>
             </>
             )}
         </div>
-      <div className="text-xl font-semibold justify-end text-left">
+      <div className="text-lg font-semibold justify-end text-left">
       <p>Ship To :</p>
       {isPrinting ? (
               <>
+              <div className="text-sm">
                 <div>{shipCompanyName}</div>
                 <div>{shipAddress}</div>
                 <div>{shipPhoneNumber}</div>
                 <div>{shipTaxID}</div>
                 <div>{shipWebsite}</div>
+                </div>
               </>
             ) : (
               <>

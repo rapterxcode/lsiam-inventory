@@ -77,103 +77,124 @@ const ItemList: React.FC<{ isPrinting: boolean }> = ({ isPrinting }) => {
   }, [items]);
 
   return (
-    <div>
-      <Table>
-        <TableHeader className='bg-current'>
-          <TableRow>
-            <TableHead className="w-[500px]">Product</TableHead>
-            <TableHead>Qty.</TableHead>
-            <TableHead>Unit Price</TableHead>
-            <TableHead>Total Price</TableHead>
-            {!isPrinting && <TableHead></TableHead>}
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {items.map((item, index) => (
-            <TableRow key={index}>
-              <TableCell className="font-medium">
-                {isPrinting ? (
-                  item.item
-                ) : (
-                  <Textarea
-                    name="item"
-                    placeholder="Item"
-                    value={item.item}
-                    onChange={(e) => handleItemChange(index, e)}
-                  />
-                )}
-              </TableCell>
-              <TableCell>
-                {isPrinting ? (
-                  item.qty
-                ) : (
-                  <Input
-                    type="number"
-                    name="qty"
-                    placeholder="Qty."
-                    value={item.qty}
-                    onChange={(e) => handleItemChange(index, e)}
-                    className="mr-2 w-24"
-                  />
-                )}
-              </TableCell>
-              <TableCell>
-                {isPrinting ? (
-                  item.unitPrice
-                ) : (
-                  <Input
-                    type="number"
-                    name="unitPrice"
-                    placeholder="Unit Price"
-                    value={item.unitPrice}
-                    onChange={(e) => handleItemChange(index, e)}
-                    className="mr-2 w-24"
-                  />
-                )}
-              </TableCell>
-              <TableCell>
-                {isPrinting ? (
-                  item.totalPrice
-                ) : (
-                  <Input
-                    type="number"
-                    name="totalPrice"
-                    placeholder="Total Price"
-                    value={item.totalPrice}
-                    onChange={(e) => handleItemChange(index, e)}
-                    className="mr-2 w-24"
-                  />
-                )}
-              </TableCell>
-              {!isPrinting && (
-                <TableCell>
-                  <Button variant="ghost" onClick={() => removeItem(index)}>
-                    Remove
-                  </Button>
-                </TableCell>
-              )}
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-      {!isPrinting && (
-        <Button onClick={addItem}>Add Item</Button>
-      )}
-      <section className="mb-2 grid grid-cols-2 gap-20 text-right justify-end">
-        <div className="col-span-1 col-start-2">
-          <div className="grid grid-cols-2 gap-1 ">
-            <h4 className="col-span-1">SubTotal :</h4>
-            <Input type="text" placeholder="SubTotal" value={subTotal.toString()} readOnly className='mb-2 col-span-1' />
-            <h4 className="col-span-1">Total :</h4>
-            <Input type="text" placeholder="Total" value={total.toString()} readOnly className='mb-2  col-span-1' />
-            <h4 className="col-span-1">Balance Due :</h4>
-            <Input type="text" placeholder="Balance Due" value={balanceDue.toString()} readOnly className='mb-2  col-span-1' />
-            <h4 className="col-span-1">Total in the Words :</h4>
-            <Textarea placeholder="Total in the Words" value={totalInWords} readOnly className='mb-2  col-span-1' />
-          </div>
-        </div>
-      </section>
+    <div className='text-sm'>
+  <Table>
+    <TableHeader className='bg-current'>
+      <TableRow>
+        <TableHead className="w-[400px]">Product</TableHead>
+        <TableHead>Qty.</TableHead>
+        <TableHead>Unit Price</TableHead>
+        <TableHead>Total Price</TableHead>
+        {!isPrinting && <TableHead></TableHead>}
+      </TableRow>
+    </TableHeader>
+    <TableBody>
+      {items.map((item, index) => (
+        <TableRow key={index}>
+          <TableCell className="font-medium p-0">
+          {isPrinting ? (
+              <div className='w-[400px]' style={ {wordWrap: 'break-word', overflowWrap: 'break-word'} }>{item.item}</div>
+            ) : (
+            <Textarea
+              name="item"
+              placeholder="Item"
+              value={item.item}
+              onChange={(e) => handleItemChange(index, e)}
+            />
+          )}
+          </TableCell>
+          <TableCell className="p-0">
+            {isPrinting ? (
+              <div className='text-center'>{item.qty}</div>
+            ) : (
+              <Input
+                type="number"
+                name="qty"
+                placeholder="Qty."
+                value={item.qty}
+                onChange={(e) => handleItemChange(index, e)}
+                className='text-right'
+              />
+            )}
+          </TableCell>
+          <TableCell className="p-0">
+            {isPrinting ? (
+              <div className='text-center'>{item.unitPrice}</div>
+            ) : (
+              <Input
+                type="number"
+                name="unitPrice"
+                placeholder="Unit Price"
+                value={item.unitPrice}
+                onChange={(e) => handleItemChange(index, e)}
+                className='text-right'
+              />
+            )}
+          </TableCell>
+          <TableCell className="p-0">
+            {isPrinting ? (
+              <div className='text-center'>{item.totalPrice}</div>
+            ) : (
+              <Input
+                type="number"
+                name="totalPrice"
+                placeholder="Total Price"
+                value={item.totalPrice}
+                onChange={(e) => handleItemChange(index, e)}
+                className='text-right'
+              />
+            )}
+          </TableCell>
+          {!isPrinting && (
+            <TableCell className="p-0">
+              <Button variant="ghost" onClick={() => removeItem(index)}>
+                Remove
+              </Button>
+            </TableCell>
+          )}
+        </TableRow>
+      ))}
+    </TableBody>
+  </Table>
+  {!isPrinting && (
+    <Button onClick={addItem}>Add Item</Button>
+  )}
+  <section className="mb-3 mt-10 grid grid-cols-1 gap-0 text-right justify-end text-sm">
+    <div className="col-span-1 col-start-2">
+      <div className="grid grid-cols-2 gap-0 text-sm">
+      {!isPrinting && (  <h4>SubTotal :</h4> )}
+        {isPrinting ? (
+              <div className='w-[auto] text-right grid grid-cols-2 col-start-2 gap-0 text-sm mr-8' style={{wordWrap: 'break-word', overflowWrap: 'break-word'}} >
+                <h4>SubTotal :</h4>{subTotal}</div>
+            ) : (
+        <Input type="text" placeholder="SubTotal" value={subTotal.toString()} readOnly className='col-span-1' />
+            )}
+        {!isPrinting && (  <h4>Total :</h4> )}
+        {isPrinting ? (
+              <div className='w-[auto] text-right grid grid-cols-2 col-start-2 gap-0 text-sm mr-8' style={{wordWrap: 'break-word', overflowWrap: 'break-word'}} >
+                <h4>Total :</h4>{total}</div>
+            ) : (
+        <Input type="text" placeholder="Total" value={total.toString()} readOnly className='col-span-1' />
+            )}
+        {!isPrinting && (  <h4>Balance Due :</h4> )}
+        {isPrinting ? (
+              <div className='w-[auto] text-right grid grid-cols-2 col-start-2 gap-0 text-sm mr-8' style={{wordWrap: 'break-word', overflowWrap: 'break-word'}} >
+                <h4>Balance Due :</h4>{balanceDue}</div>
+            ) : (
+        <Input type="text" placeholder="Balance Due" value={balanceDue.toString()} readOnly className='col-span-1' />
+            )}
+        {!isPrinting && (  <h4>Total in the Words :</h4> )}
+        {isPrinting ? (
+              <div className='w-[300px] text-right grid grid-cols-2 col-start-2 gap-0 text-sm mr-8' style={{wordWrap: 'break-word', overflowWrap: 'break-word'}} >
+                <h4>Total in the Words :</h4>{totalInWords}</div>
+            ) : (
+        <Textarea placeholder="Total in the Words" value={totalInWords} readOnly className='col-span-1' />
+            )}
+      </div>
     </div>
+  </section>
+</div>
+
   );
 };
 

@@ -30,9 +30,10 @@ export const Footer: React.FC<FooterProps> = ({ isPrinting }) => {
         <h2>Payment Method</h2>
         {isPrinting ? (
           <>
+          <div className="text-sm">
             <div>{paymentMethod}</div>
             <div>{emailPaypal}</div>
-            
+          </div>  
           </>
         ) : (
           <>
@@ -59,7 +60,9 @@ export const Footer: React.FC<FooterProps> = ({ isPrinting }) => {
       <div className="col-end-2 text-lg font-semibold">
         <h2>Notes</h2>
         {isPrinting ? (
+          <div className="text-sm">
           <div>{note}</div>
+          </div>
         ) : (
           <Textarea
             placeholder="Notes"
@@ -70,7 +73,9 @@ export const Footer: React.FC<FooterProps> = ({ isPrinting }) => {
         )}
         <h2>Condition and Terms</h2>
         {isPrinting ? (
+          <div className="text-sm">
           <div>{conterms}</div>
+          </div>
         ) : (
           <Textarea
             placeholder="Condition and Terms"
