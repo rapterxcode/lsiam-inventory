@@ -87,3 +87,17 @@
     @apply bg-background text-foreground;
   }
 }
+
+@page {
+  size: A4;
+  margin: 1.5cm 1.5cm 1.5cm 1.5cm; /* top, right, bottom, left */
+}
+
+@media print {
+  .invoice-builder {
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+}
